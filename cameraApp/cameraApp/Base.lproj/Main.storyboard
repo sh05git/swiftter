@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="cameraApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MYl-4d-cDF">
+                                <rect key="frame" x="157.5" y="587" width="60" height="60"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fgj-R4-HXA"/>
+                                    <constraint firstAttribute="width" constant="60" id="kst-Mg-p8k"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hgi-Bu-Jq4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="MYl-4d-cDF" secondAttribute="bottom" constant="20" id="ZHR-Yt-ez6"/>
+                            <constraint firstItem="MYl-4d-cDF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lGc-Ul-8pa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <segue destination="Xzj-6H-wpg" kind="presentation" identifier="next" id="6Qv-FO-e2I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-127" y="133"/>
+        </scene>
+        <!--Pre View Controller-->
+        <scene sceneID="PqL-sv-evW">
+            <objects>
+                <viewController id="Xzj-6H-wpg" customClass="PreViewController" customModule="cameraApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a0N-s0-xjd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yfa-gn-Yyx">
+                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HI8-YG-RY0">
+                                <rect key="frame" x="329" y="20" width="31" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="saveImage:" destination="Xzj-6H-wpg" eventType="touchUpInside" id="BzQ-K7-0Ax"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18C-oM-VAY">
+                                <rect key="frame" x="15" y="20" width="77" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="キャンセル"/>
+                                <connections>
+                                    <action selector="cancel:" destination="Xzj-6H-wpg" eventType="touchUpInside" id="IO0-cI-x9x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="18C-oM-VAY" firstAttribute="leading" secondItem="BMr-Zc-pJY" secondAttribute="leading" constant="15" id="4p2-nY-kvS"/>
+                            <constraint firstItem="18C-oM-VAY" firstAttribute="top" secondItem="BMr-Zc-pJY" secondAttribute="top" id="5a0-ud-xY2"/>
+                            <constraint firstItem="HI8-YG-RY0" firstAttribute="top" secondItem="BMr-Zc-pJY" secondAttribute="top" id="6SS-Do-Pbo"/>
+                            <constraint firstItem="BMr-Zc-pJY" firstAttribute="trailing" secondItem="HI8-YG-RY0" secondAttribute="trailing" constant="15" id="TX0-pP-KX2"/>
+                            <constraint firstItem="Yfa-gn-Yyx" firstAttribute="bottom" secondItem="BMr-Zc-pJY" secondAttribute="bottom" id="Wbg-yo-63A"/>
+                            <constraint firstItem="Yfa-gn-Yyx" firstAttribute="leading" secondItem="BMr-Zc-pJY" secondAttribute="leading" id="Z4I-sM-OmQ"/>
+                            <constraint firstItem="Yfa-gn-Yyx" firstAttribute="top" secondItem="18C-oM-VAY" secondAttribute="bottom" constant="8" id="hEA-zt-PS1"/>
+                            <constraint firstItem="Yfa-gn-Yyx" firstAttribute="trailing" secondItem="BMr-Zc-pJY" secondAttribute="trailing" id="mmm-0E-xQl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BMr-Zc-pJY"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Yfa-gn-Yyx" id="NjB-uq-uCc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rQ8-uu-5aI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="133"/>
+        </scene>
+    </scenes>
+</document>
